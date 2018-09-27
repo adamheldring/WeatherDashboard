@@ -1,0 +1,80 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #FFF
+}
+h1 {
+  margin-bottom: 0px;
+  color: #000
+}
+select {
+  height: 50px;
+  border: none;
+  width: 200px;
+  font-size: 18px;
+}
+i {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#outerContainer {
+  background: rgba(0,0,0,0.2);
+  margin-top: 50px;
+  padding-bottom: 50px;
+  min-height: 500px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.3)
+}
+#selector-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+#header {
+  width: 100%;
+  font-size: 60px;
+}
+#location {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 900;
+  padding-bottom: 50px;
+}
+#degrees {
+  width: 50%;
+  font-size: 50px;
+}
+#description {
+  font-size: 50px;
+  width: 50%;
+  overflow: auto;
+}
+#sunrise {
+  width: 50%;
+}
+#sunset {
+  width: 50%;
+}
+
+@media (max-width: 750px) {
+  #header {
+    font-size: 30px;
+  }
+  #outerContainer {
+    width: 400px;
+  }
+  #degrees {
+    font-size: 30px;
+  }
+  #description {
+    font-size: 30px;
+  }
+}
