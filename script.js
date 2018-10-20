@@ -1,5 +1,3 @@
-// var url = "http://api.openweathermap.org/data/2.5/weather?q=Stockholm,Sweden&units=metric&APPID=b1b5d900f010b71ca16655a75e0d5912"
-
 const myLocation = document.getElementById('location')
 const myDegrees = document.getElementById('degrees')
 const myDescription = document.getElementById('description')
@@ -18,11 +16,11 @@ const checkIfTimeOnlyOneDigit = (timeUnit) => {
   }
 }
 
-//MY CHECK WEATHER FUNCTION
+//CHECK WEATHER FUNCTION
 const getWeather = (chosenCity) => {
 
-  var url = chosenCity
-
+  var url = "https://openweathermap.org/data/2.5/weather/?appid=b6907d289e10d714a6e88b30761fae22&id=" + chosenCity + "&units=metric"
+  console.log(url)
   var req = new Request(url)
   fetch(req)
       .then(function(response) {
@@ -62,7 +60,7 @@ const getWeather = (chosenCity) => {
 //Gets new weather when user selects new city
 }
 const selectChange = (e) => {
-  const chosenCityString = e.target.value
+  let chosenCityString = e.target.value
   getWeather(chosenCityString)
 }
 
