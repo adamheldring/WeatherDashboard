@@ -65,10 +65,11 @@ i {
 
 @media (max-width: 840px) {
   #header {
-    font-size: 30px;
+    font-size: 25px;
   }
   #outerContainer {
-    width: 400px;
+    width: 290px;
+    margin-bottom: 40px;
   }
   #degrees {
     font-size: 30px;
