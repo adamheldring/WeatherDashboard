@@ -20,13 +20,11 @@ const checkIfTimeOnlyOneDigit = (timeUnit) => {
 const getWeather = (chosenCity) => {
 
   var url = "https://openweathermap.org/data/2.5/weather/?appid=b6907d289e10d714a6e88b30761fae22&id=" + chosenCity + "&units=metric"
-  console.log(url)
   var req = new Request(url)
   fetch(req)
       .then(function(response) {
           return response.json()
       }).then(function(result){
-          console.log(result)
 
           //Get time for sunset and sunrise, convert to proper date format and add 0 before single digits
           let sunriseTime = new Date (result.sys.sunrise * 1000)
@@ -56,9 +54,9 @@ const getWeather = (chosenCity) => {
             myPage.style.background = "#FF5733" //red
           }
   })
+}
 
 //Gets new weather when user selects new city
-}
 const selectChange = (e) => {
   let chosenCityString = e.target.value
   getWeather(chosenCityString)
@@ -66,8 +64,5 @@ const selectChange = (e) => {
 
 document.getElementById('citySelector').addEventListener('change', selectChange)
 
-//Gets weather on first load
-if (firstLoad) {
-  firstLoad = false
-  getWeather(document.getElementById('citySelector').value)
-}
+//Gets weather for Stockholm on first load
+getWeather("2673730")
