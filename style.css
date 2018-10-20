@@ -63,7 +63,7 @@ i {
   width: 50%;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 840px) {
   #header {
     font-size: 30px;
   }
