@@ -18,14 +18,13 @@ const checkIfTimeOnlyOneDigit = (timeUnit) => {
 
 //CHECK WEATHER FUNCTION
 const getWeather = (chosenCity) => {
-
-  var url = "https://openweathermap.org/data/2.5/weather/?appid=b6907d289e10d714a6e88b30761fae22&id=" + chosenCity + "&units=metric"
+  var url = `https://api.openweathermap.org/data/2.5/weather?id=${chosenCity}&appid=b1b5d900f010b71ca16655a75e0d5912&units=metric`
   var req = new Request(url)
   fetch(req)
       .then(function(response) {
           return response.json()
       }).then(function(result){
-
+        
           //Get time for sunset and sunrise, convert to proper date format and add 0 before single digits
           let sunriseTime = new Date (result.sys.sunrise * 1000)
           let sunriseHours = checkIfTimeOnlyOneDigit(sunriseTime.getHours())
